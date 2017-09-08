@@ -1,0 +1,16 @@
+diff --git a/lib/ssl-client.c b/lib/ssl-client.c
+index 6ef1bb5..5dfd1e4 100644
+--- a/lib/ssl-client.c
++++ b/lib/ssl-client.c
+@@ -416,10 +416,7 @@ lws_ssl_client_connect2(struct lws *wsi)
+ 			lwsl_notice("Cert is from the future... "
+ 				    "probably our clock... accepting...\n");
+ 		} else {
+-			lwsl_err("server's cert didn't look good, X509_V_ERR = %d: %s\n",
+-				 n, ERR_error_string(n, sb));
+-			lws_ssl_elaborate_error();
+-			return -1;
++			lwsl_notice("server's cert didn't look good, X509_V_ERR\n");
+ 		}
+ 	}
+ 

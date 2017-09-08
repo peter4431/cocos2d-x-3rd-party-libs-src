@@ -12,6 +12,7 @@ $(TARBALLS)/libwebsockets-git.tar.xz:
 websockets: libwebsockets-git.tar.xz .sum-websockets
 	$(UNPACK)
 	$(APPLY) $(SRC)/websockets/remove-werror.patch
+	$(APPLY) $(SRC)/websockets/ssl-client.patch
 	$(MOVE)
 
 ifdef HAVE_TIZEN
